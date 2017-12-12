@@ -38,7 +38,16 @@ public class Practice04ScaleView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //(float sx, float sy, float px, float py)
+        //sx--横向的放缩倍数 sy--纵向的放缩倍数
+        //px,py--横向的放缩的轴心
+        canvas.save();
+        canvas.scale(1.3f, 1.3f, bitmap.getWidth()/2 + point1.x, bitmap.getHeight()/2 + point1.y);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
+        canvas.restore();
+        canvas.save();
+        canvas.scale(0.6f, 1.8f, bitmap.getWidth()/2 + point2.x, bitmap.getHeight()/2 + point2.y);
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
+        canvas.save();
     }
 }

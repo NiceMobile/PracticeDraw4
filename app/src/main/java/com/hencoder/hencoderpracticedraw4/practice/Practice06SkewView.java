@@ -38,7 +38,14 @@ public class Practice06SkewView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //(float sx, float sy)在X轴和Y轴的错切系数
+        canvas.save();
+        canvas.skew(0, 0.5f);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
+        canvas.restore();
+        canvas.save();
+        canvas.skew(-0.5f, 0);
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
+        canvas.restore();
     }
 }
